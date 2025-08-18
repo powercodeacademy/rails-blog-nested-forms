@@ -39,7 +39,36 @@ jspm_packages
 /db/*.sqlite3
 /db/*.sqlite3-journal
 
+# Rails logs, temp, and credentials
+/log/*
+!/log/.keep
+/tmp/*
+/tmp/pids/*
+/tmp/cache/*
+/tmp/sockets/*
+/public/assets
+/public/packs
+/public/packs-test
+/public/system
+/public/uploads
+/storage/*
+/config/master.key
+/config/credentials.yml.enc
+.byebug_history
+.env
+.env.*
+.DS_Store
+.bundle
+.yardoc
+_yardoc
+/coverage/
+/spec/examples.txt
+/node_modules/
+/yarn-error.log
+
 # Ignore all logfiles and tempfiles.
 /log/*
 !/log/.keep
 /tmp
+
+db/*.sqlite3*

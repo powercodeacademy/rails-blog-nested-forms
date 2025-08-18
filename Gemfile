@@ -1,23 +1,27 @@
+
 source 'https://rubygems.org'
 
-gem 'rails', '5.0.7.1'
-gem 'coffee-rails'
-gem 'jquery-rails'
-gem 'sass-rails'
-gem 'sdoc', '~> 0.4.0',          group: :doc
-gem 'uglifier'
-gem 'bootsnap'
+ruby '3.3.5'
+gem 'rails', '~> 7.1.0'
+gem 'puma', '~> 6.0'
+gem 'sqlite3', '~> 1.6'
+gem 'bootsnap', '>= 1.4.4', require: false
 
-gem 'sqlite3', '~>1.3.6'
+gem 'ostruct'
 
 group :development, :test do
   gem 'rack_session_access'
-  gem "capybara"
-  gem "database_cleaner"
-  gem "pry-byebug"
-  gem "rspec-rails"
+  gem 'capybara'
+  gem 'database_cleaner'
+  gem 'pry-byebug'
+  gem 'rspec-rails', '~> 6.0'
+  gem 'webrick'
 end
 
 group :test do
   gem 'rspec-collection_matchers'
+end
+
+group :development do
+  gem 'listen', '~> 3.7'
 end
