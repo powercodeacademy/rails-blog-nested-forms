@@ -19,11 +19,13 @@
   </div>
 
   <div class="field">
-    Tags:
-
-    <%# Add your new tag fields here %>
-
+    <p>Select Tags:</p>
     <%= f.collection_check_boxes :tag_ids, Tag.all, :id, :name %><br>
+    <p>Create a new tag:</p>
+    <%= f.fields_for :tags, @post.tags.build do |tags_fields| %>
+      <%= tags_fields.label :name %>
+      <%= tags_fields.text_field :name %>
+    <% end %>
   </div>
 
   <div class="actions">
