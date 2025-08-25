@@ -16,6 +16,7 @@ group :development, :test do
   gem 'pry-byebug'
   gem 'rspec-rails', '~> 6.0'
   gem 'webrick'
+  gem 'pry'
 end
 
 group :test do

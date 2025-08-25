@@ -298,6 +298,7 @@ DEPENDENCIES
   database_cleaner
   listen (~> 3.7)
   ostruct
+  pry
   pry-byebug
   puma (~> 6.0)
   rack_session_access
