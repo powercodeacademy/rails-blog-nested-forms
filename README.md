@@ -2,7 +2,7 @@
 
 We're going to build off the previous iteration of our Blog App, where we created new models for `User` and `Tag` (and applicable associations) and wrote validations. We want to clean up our tagging feature. Our ability to add tags to a new post is super useful, but what if, when we're making a new post, we want to add a new tag that isn't in the list? Let's build that out.
 
-***NOTE***: As with much of our Rails curriculum, remember to always use the `--no-test-framework` flag when you generate models, controllers, etc. That way, the Rails generators will not create additional tests on top of the test suite that already comes with the lesson. E.g., `rails g model User username:string email:string --no-test-framework`. However, it is not needed for this lab as we've provided the starter files.
+***NOTE***: As with much of our Rails curriculum, always use the `--no-test-framework` flag when generating models, controllers, etc. This prevents Rails generators from creating additional tests on top of the provided test suite. For example, use `bin/rails generate model User username:string email:string --no-test-framework`. This lab already includes starter files, so you do not need to generate tests.
 
 ## Tags
 
@@ -13,15 +13,17 @@ We're going to build off the previous iteration of our Blog App, where we create
 5. Remember, because we have a uniqueness validation on the name of tag, we will need to account for that.
 6. A user shouldn't have to submit a new tag every time they submit a post.
 
-  ```ruby
-  class User < ActiveRecord::Base
-    has_many :posts
-    accepts_nested_attributes_for :posts, reject_if: proc { |attributes| attributes['title'].blank? }
-  end
-  ```
+    ```ruby
+    class User < ApplicationRecord
+      has_many :posts
+      accepts_nested_attributes_for :posts, reject_if: proc { |attributes| attributes['title'].blank? }
+    end
+    ```
+
 7. To allow a user to create a new tag, the controller action for a new post should instantiate a new tag. Check out the documentation for the [`fields_for` tag](http://apidock.com/rails/ActionView/Helpers/FormBuilder/fields_for).
 
 ## Resources
+
 * [Strong Params](http://edgeguides.rubyonrails.org/action_controller_overview.html#strong-parameters)
 * [Nested Forms](http://guides.rubyonrails.org/form_helpers.html#nested-forms)
 * [`fields_for` tag](http://apidock.com/rails/ActionView/Helpers/FormBuilder/fields_for)

@@ -1,22 +1,20 @@
-
 source 'https://rubygems.org'
 
 ruby '3.3.5'
-gem 'rails', '~> 7.1.0'
-gem 'puma', '~> 6.0'
-gem 'sqlite3', '~> 1.6'
 gem 'bootsnap', '>= 1.4.4', require: false
-
 gem 'ostruct'
+gem 'puma', '~> 6.0'
+gem 'rails', '~> 7.1.0'
+gem 'sqlite3', '~> 1.6'
 
 group :development, :test do
-  gem 'rack_session_access'
   gem 'capybara'
   gem 'database_cleaner'
-  gem 'pry-byebug'
-  gem 'rspec-rails', '~> 6.0'
-  gem 'webrick'
   gem 'pry'
+  gem 'rack_session_access'
+  gem 'rspec-rails', '~> 6.0'
+  gem 'rubocop'
+  gem 'webrick'
 end
 
 group :test do
